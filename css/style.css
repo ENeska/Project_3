@@ -49,7 +49,6 @@ h2{
 }
 .up ul > li {
     color: floralwhite;
-    font-size: 1rem;
     padding-left: 2rem;
     cursor: pointer;
 }
@@ -91,7 +90,6 @@ nav > ul {
 }
 
 nav ul li {
-    list-style: none;
     padding: 0.5rem;
     transition: 0.6s;
 }
@@ -112,6 +110,20 @@ nav ul i {
     font-size: 1.5rem;
 }
 
+nav button {
+    position: absolute;
+    background-color: #2BBFBE;
+    border: none;
+    width: 12rem;
+    height: 3rem;
+    bottom: 1.25rem;
+    left: 2.25rem;
+    border-radius: 5px;
+    transition: 0.4s;
+    margin-bottom: 1rem;
+    z-index: 50;
+}
+
 /* Article/Section*/
 
 article {
@@ -126,8 +138,7 @@ section {
     display: inline-block;
     width:  100%;
     background: white;
-    margin-bottom: 2em;
-    margin-right: 1em;
+    margin: 0 1em 2em 0;
     padding: 1.5em;
 }
 
@@ -139,25 +150,10 @@ section:first-of-type {
     font-weight: bold;
 }
 
-section:first-of-type img {
-     width: 64%;
- }
-
 section:first-of-type button {
     position: absolute;
     right: 1.25rem;
     bottom: 1.25rem;
-}
-
-section img {
-    width: 60%;
-    float: right;
-    margin: 0 0 1em 1em;
-    box-shadow: 2px 2px 6px rgba(136,141,143,1);
-}
-
-section ul li {
-    margin-left: 20px;
 }
 
 section h3 {
@@ -169,6 +165,17 @@ section h3 {
 section p {
     text-align: justify;
     margin-bottom: 1em;
+}
+
+section ul li {
+    margin-left: 20px;
+}
+
+section img {
+    width: 60%;
+    float: right;
+    margin: 0 0 1em 1em;
+    box-shadow: 2px 2px 6px rgba(136,141,143,1);
 }
 
 .places  img {
@@ -205,16 +212,10 @@ section select {
     height: 37px;
     border-radius: 5px;
     transition: 0.4s;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 1.25rem;
     padding-left: 0.18rem;
     color: white;
     font-size: 1rem;
-    margin-left: 1.25rem;
-}
-
-.ion-android-search {
-    position: relative;
-    top: 0.5rem;
 }
 
 section i {
@@ -223,21 +224,9 @@ section i {
     font-weight: bold;
 }
 
-nav button {
-    position: absolute;
-    background-color: #2BBFBE;
-    border: none;
-    width: 12rem;
-    height: 3rem;
-    bottom: 1.25rem;
-    left: 2.25rem;
-    border-radius: 5px;
-    transition: 0.4s;
-    margin-bottom: 1rem;
-    padding-left: 0.25rem;
-    color: white;
-    font-size: 1rem;
-    z-index: 50;
+.ion-android-search {
+    position: relative;
+    top: 0.5rem;
 }
 
 .verona .first {
@@ -308,8 +297,7 @@ input[type=checkbox] {
 }
 
 .cost p {
-    margin-bottom: 0.75rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem 0 0.75rem 0;
 }
 
 .result {

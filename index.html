@@ -85,14 +85,14 @@
                     <label class="first" for="data1">Arrival date<i class="ion-android-calendar"></i></label>
                     <label class="second" for="data2">Date of departure<i class="ion-android-calendar"></i></label><br>
 
-                    <input class="first" type="date" id="data1">
-                    <input class="second" type="date" id="data2"><br>
+                    <input class="first" type="date" id="data1" required>
+                    <input class="second" type="date" id="data2" required><br>
 
                     <label class="first" for="adult">Adult</label>
                     <label class="second" for="childreen">Childreen</label><br>
 
-                    <input class="first" type="number" id="adult"/>
-                    <input class="second" type="number" id="childreen"/><br>
+                    <input class="first" type="number" min="0" max="15" id="adult" required/>
+                    <input class="second" type="number" min="0" max="15" id="childreen" required/><br>
 
                     <label for="check1">All inclusive</label>
                     <input type="checkbox" value="None" id="check1" name="check" /> <br>
@@ -149,7 +149,6 @@
 
     <script src="js/vendor/jquery-1.12.0.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/app.js"></script>
 </body>
 
