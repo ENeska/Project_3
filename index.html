@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
+
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
 
 </head>
 <body>
@@ -82,11 +84,11 @@
                 <p>Cost per day <span class="big">200&#8364;</span> &#47; adult <span class="big"> 170&#8364;</span> &#47; children <span class="off">Over 4 days Off <span class="offPerc">10%</span></span></p>
 
                 <form>
-                    <label class="first" for="data1">Arrival date<i class="ion-android-calendar"></i></label>
-                    <label class="second" for="data2">Date of departure<i class="ion-android-calendar"></i></label><br>
+                    <label class="first" for="datepicker1">Arrival date<i class="ion-android-calendar"></i></label>
+                    <label class="second" for="datepicker2">Date of departure<i class="ion-android-calendar"></i></label><br>
 
-                    <input class="first" type="date" id="data1" required>
-                    <input class="second" type="date" id="data2" required><br>
+                    <input class="first" type="text" id="datepicker1" required>
+                    <input class="second" type="text" id="datepicker2" required><br>
 
                     <label class="first" for="adult">Adult</label>
                     <label class="second" for="childreen">Childreen</label><br>
@@ -132,7 +134,7 @@
                     <p> The Verona opera festival takes place rvery year from June to August. The daily changing programme ensures that you can enjoy another famous opera every night. </p>
                 </div>
 
-                <div class="inf">
+                <div class="inf balcony">
                     <img src="img/balcony.jpg" alt="The balcony of Juliet's house">
                     <p>Love story in Verona</p>
                     <p>One of the best known and most tragic love stories, that of Romeo and Juliet, is set in medieval Verona. Although William Shakespeare, who wrote the story in 1597, never went to Verona himself he made city the centre of his story and gave Verona a legacy that can be perceived throughout the city even today.</p>
@@ -147,7 +149,9 @@
 
         </article>
 
-    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
 </body>

@@ -1,72 +1,81 @@
-$(document).ready(function(){
 
-    /* Menu */
-    $(function(){
-        $('.js_menu').on('click', function(){
-            $('nav').toggleClass('margin_left');
-        });
-
-        $('.js_close').on('click', function(){
-            $('nav').removeClass('margin_left');
-        });
-
+/* Menu */
+$(function menu(){
+    $('.js_menu').on('click', function(){
+        $('body').toggleClass('margin_left');
     });
 
-    /* Nav*/
-    $(function (){
-        $('nav li').on('click', function (){
-
-            var icon = $(this).find('i');
-
-            if (icon.hasClass('ion-android-add')) {
-                icon.removeClass();
-                icon.addClass('ion-android-remove')
-
-            } else {
-                icon.removeClass();
-                icon.addClass('ion-android-add')
-            }
-        });
+    $('.js_close').on('click', function(){
+        $('body').removeClass('margin_left');
     });
 
-    $(function () {
-        $('.up ul').hide();
-        $('.up').children('li').on('click', function () {
-            $(this).next().slideToggle();
-        });
+});
+
+/* Nav*/
+$(function nav(){
+    $('nav li').on('click', function (){
+
+        var icon = $(this).find('i');
+
+        if (icon.hasClass('ion-android-add')) {
+            icon.removeClass();
+            icon.addClass('ion-android-remove')
+
+        } else {
+            icon.removeClass();
+            icon.addClass('ion-android-add')
+        }
     });
+});
 
-    /* Read more */
+$(function hideNav() {
 
-    $(function() {
-        var hidden_text = $('.hidden_text');
-        hidden_text.hide();
-        $('.box_first').find('button').on('click', function () {
-            hidden_text.slideToggle();
-            $(this).remove();
-        })
+    $('.up ul').hide();
+    $('.up').children('li').on('click', function () {
+        $(this).next().slideToggle();
     });
+});
 
-    /* Change color */
+/* Read more */
 
-    $(function () {
+$(function readMore() {
 
-        var button = $('nav').find('.js_button');
-        $(button).on('click', function () {
+    var hidden_text = $('.hidden_text');
+    hidden_text.hide();
+    $('.box_first').find('button').on('click', function () {
+        hidden_text.slideToggle();
+        $(this).remove();
+    })
+});
 
-            $('.menu_head, p::selection, section button, section select, nav button, .cost').toggleClass('changeStyleB');
-            $('.icon_menu, section i, nav a:hover').toggleClass('changeStyleC');
-        })
+/* Change color */
 
-    });
+$(function changeColor() {
 
-    /*Travel Cost*/
+    var button = $('nav').find('.js_button');
+    $(button).on('click', function () {
 
+        $('.menu_head, p::selection, section button, section select, nav button, .cost').toggleClass('changeStyleB');
+        $('.icon_menu, section i, nav a:hover').toggleClass('changeStyleC');
+    })
+
+});
+
+
+
+
+/*Travel Cost*/
+
+$(function cost() {
     $('.cost .calculate').on('click', function () {
 
+
+
+
+
         /* Day */
-        var data1 = $('.cost #data1').val();
-        var data2 = $('.cost #data2').val();
+        var data1 = $('.cost #datepicker1').val();
+        var data2 = $('.cost #datepicker2').val();
 
         var data_1 = new Date(data1);
         var data_2 = new Date(data2);
@@ -115,35 +124,52 @@ $(document).ready(function(){
         var totalAdult = (totalDay * (adultCost) +extraTrips) *adult;
         var totalChildreen = (totalDay * (childreenCost) +extraTrips) *childreen;
 
-        cost.find('.total').text(totalAdult+totalChildreen);
-
+        cost.find('.total').text(totalAdult-totalChildreen);
     });
+});
 
-    /* Change selection*/
-    $(function() {
-        var hidden = $('.inf');
 
-        hidden.hide();
-
-        function displayVals() {
-            var singleValues = $( "#single" ).val();
-
-            if (singleValues=="piazza") {
-                hidden.hide();
-                $('.inf:first').show();
-            } else if (singleValues=="arena"){
-                hidden.hide();
-                $('.inf:odd').show();
-            } else {
-                hidden.hide();
-                $('.inf:last').show();
-            }
-        }
-        $("select" ).change( displayVals );
-        displayVals();
+/*Datepicker*/
+$( function() {
+    $("#datepicker1, #datepicker2").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: "0"
     });
 
 });
+
+
+
+
+
+    /* Change selection*/
+
+
+        var hidden = $('.inf');
+        hidden.hide();
+
+        var showPlace = {
+
+            piazza: function () {
+                $('.inf:first').show()
+            },
+
+            arena: function () {
+                $('.inf:odd').show()
+            },
+
+            balcony: function () {
+                $('.inf:last').show()
+            }
+
+
+
+        };
+
+        if($.isFunction()){};
+
+
+
 
 
 
