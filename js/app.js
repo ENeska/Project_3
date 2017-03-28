@@ -42,9 +42,21 @@ $(function readMore() {
 
     var hidden_text = $('.hidden_text');
     hidden_text.hide();
+    $(hidden_text).addClass('hide');
+
+
     $('.box_first').find('button').on('click', function () {
-        hidden_text.slideToggle();
-        $(this).remove();
+
+        if (hidden_text.hasClass('hide'))  {
+            hidden_text.slideDown();
+            $(this).text('Read less');
+            hidden_text.removeClass('hide')
+
+        } else {
+            hidden_text.slideUp();
+            $(this).text('Read more');
+            hidden_text.addClass('hide');
+        }
     })
 });
 
@@ -66,12 +78,21 @@ $(function changeColor() {
 
 /*Travel Cost*/
 
+$(function check() {
+
+    $('#adult').on('keyDown'), function () {
+
+       if ($('#adult').length != 0){
+
+           $('.cost button').removeAttr('disabled')
+       }
+    }
+
+});
+
 $(function cost() {
+
     $('.cost .calculate').on('click', function () {
-
-
-
-
 
         /* Day */
         var data1 = $('.cost #datepicker1').val();
@@ -139,9 +160,6 @@ $( function() {
 });
 
 
-
-
-
     /* Change selection*/
 
 
@@ -161,8 +179,6 @@ $( function() {
             balcony: function () {
                 $('.inf:last').show()
             }
-
-
 
         };
 
