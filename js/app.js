@@ -83,8 +83,6 @@ $(function cost() {
     $('.cost .calculate').on('click', function () {
 
 
-
-
         /* Day */
         var data1 = $('.cost #datepicker1').val();
         var data2 = $('.cost #datepicker2').val();
@@ -185,4 +183,5 @@ $(function changeSection() {
         }
     });
 });
+
 
