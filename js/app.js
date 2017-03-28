@@ -78,21 +78,12 @@ $(function changeColor() {
 
 /*Travel Cost*/
 
-$(function check() {
-
-    $('#adult').on('keyDown'), function () {
-
-       if ($('#adult').length != 0){
-
-           $('.cost button').removeAttr('disabled')
-       }
-    }
-
-});
-
 $(function cost() {
 
     $('.cost .calculate').on('click', function () {
+
+
+
 
         /* Day */
         var data1 = $('.cost #datepicker1').val();
@@ -162,31 +153,36 @@ $( function() {
 
     /* Change selection*/
 
+var $singleSelect =  $('#single');
 
-        var hidden = $('.inf');
-        hidden.hide();
+var showPlace = {
 
-        var showPlace = {
+    piazza: function () {
+        $('.inf:first').show()
+    },
 
-            piazza: function () {
-                $('.inf:first').show()
-            },
+    arena: function () {
+        $('.inf:odd').show()
+    },
 
-            arena: function () {
-                $('.inf:odd').show()
-            },
-
-            balcony: function () {
-                $('.inf:last').show()
-            }
-
-        };
-
-        if($.isFunction()){};
+    balcony: function () {
+        $('.inf:last').show()
+    }
+};
 
 
+$(function changeSection() {
 
+    var hidden = $('.inf');
+    hidden.hide();
 
+    $singleSelect.addEventListener('select', function () {
 
+        var singleValues = $singleSelect.val();
 
+        if ($.isFunction(showPlace[singleValues])) {
+            showPlace[singleValues]();
+        }
+    });
+});
 
