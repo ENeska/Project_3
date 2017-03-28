@@ -174,7 +174,7 @@ $(function changeSection() {
     var hidden = $('.inf');
     hidden.hide();
 
-    $('#single').on('select', function () {
+    $('#single').on('change', function () {
 
         var singleValues = $singleSelect.val();
 
