@@ -153,6 +153,7 @@ $( function() {
 
 var $singleSelect =  $('#single');
 
+
 var showPlace = {
 
     piazza: function () {
@@ -169,10 +170,8 @@ var showPlace = {
 };
 
 
-$(function changeSection() {
 
-    var hidden = $('.inf');
-    hidden.hide();
+$(function changeSection() {
 
     $('#single').on('change', function () {
 
@@ -182,6 +181,7 @@ $(function changeSection() {
             showPlace[singleValues]();
         }
     });
+
 });
 
 
