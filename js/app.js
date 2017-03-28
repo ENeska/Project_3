@@ -174,7 +174,7 @@ $(function changeSection() {
     var hidden = $('.inf');
     hidden.hide();
 
-    $singleSelect.addEventListener('select', function () {
+    $('#single').on('select', function () {
 
         var singleValues = $singleSelect.val();
 
