@@ -247,7 +247,7 @@ section i {
     color: white;
 }
 
-input[type=date], input[type=number] {
+input[type=text], input[type=number] {
     border: none;
     border-radius: 4px;
     color: #3e4451;

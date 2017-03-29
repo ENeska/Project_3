@@ -80,7 +80,7 @@ $(function changeColor() {
 
 $(function cost() {
 
-    $('.cost .calculate').on('click', function () {
+    $('.calculate').on('click', function () {
 
 
         /* Day */
