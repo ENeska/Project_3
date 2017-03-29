@@ -2,11 +2,13 @@
 /* Menu */
 $(function menu(){
     $('.js_menu').on('click', function(){
-        $('body').toggleClass('margin_left');
+        $('nav').toggleClass('margin_left');
+        $('header').toggleClass('margin_left');
+        $('.dark_background').toggle();
     });
 
     $('.js_close').on('click', function(){
-        $('body').removeClass('margin_left');
+        $('nav').removeClass('margin_left');
     });
 
 });
