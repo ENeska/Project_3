@@ -92,19 +92,17 @@ $(function cost() {
 
         var totalDay = (data_2 - data_1)/86400000;
 
-        /*Adult*/
+        /*Adult Childreen*/
         var dayAdult = 200;
+        var dayChildren = 170;
+
         if(totalDay>=4) {
             dayAdult = dayAdult*0.9;
-        }
-
-        /*Children*/
-        var dayChildren = 170;
-        if(totalDay>=4) {
             dayChildren = dayChildren*0.9;
         }
 
         /*Other option*/
+
         if($('#check1').is(":checked")){
             var allInclusive = 10;
         } else {
@@ -134,12 +132,16 @@ $(function cost() {
         var totalAdult = (totalDay * (adultCost) +extraTrips) *adult;
         var totalChildreen = (totalDay * (childreenCost) +extraTrips) *childreen;
 
-        cost.find('.total').text(totalAdult-totalChildreen);
+        cost.find('.total').text(totalAdult+totalChildreen);
     });
 });
 
 
+
+
+
 /*Datepicker*/
+
 $( function() {
     $("#datepicker1, #datepicker2").datepicker({
         dateFormat: "yy-mm-dd",
@@ -149,27 +151,27 @@ $( function() {
 });
 
 
-    /* Change selection*/
+/* Change selection*/
 
 var $singleSelect =  $('#single');
 
+var hidden = $('.inf');
 
 var showPlace = {
 
     piazza: function () {
-        $('.inf:first').show()
+        hidden.hide();
+        $('.inf:first').show();
     },
-
     arena: function () {
-        $('.inf:odd').show()
+        hidden.hide();
+        $('.inf:odd').show();
     },
-
     balcony: function () {
-        $('.inf:last').show()
+        hidden.hide();
+        $('.inf:last').show();
     }
 };
-
-
 
 $(function changeSection() {
 
@@ -179,9 +181,54 @@ $(function changeSection() {
 
         if ($.isFunction(showPlace[singleValues])) {
             showPlace[singleValues]();
+
         }
     });
-
 });
+
+
+/*Validate*/
+
+$(function check(){
+    $('#myform').find('input').on('focus change', function (event){
+
+
+        if (event.type === 'focus') {
+
+            if ($(this).val() == '') {
+                $(this).addClass('error');
+            }
+            else {
+                $(this).removeClass('error');
+            }
+        } else if (event.type === 'change') {
+
+            if ($(this).val() == '') {
+                $(this).addClass('error');
+            }
+            else {
+                $(this).removeClass('error');
+            }
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

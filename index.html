@@ -82,14 +82,15 @@
 
             <section class="cost">
                 <h3>Travel Cost Calculator</h3>
-                <p>Cost per day <span class="big">200&#8364;</span> &#47; adult <span class="big"> 170&#8364;</span> &#47; children <span class="off">Over 4 days Off <span class="offPerc">10%</span></span></p>
+                <p>Cost per day <span class="big">200&#8364;</span> &#47; adult <span class="big"> 170&#8364;</span> &#47; children <span class="off">Over 4 days <span class="offPerc">10%</span>OFF</span></p>
 
-                <form>
+                <form id="myform">
+
                     <label class="first" for="datepicker1">Arrival date<i class="ion-android-calendar"></i></label>
                     <label class="second" for="datepicker2">Date of departure<i class="ion-android-calendar"></i></label><br>
 
-                    <input class="first" type="text" id="datepicker1" required>
-                    <input class="second" type="text" id="datepicker2" required><br>
+                    <input class="first" type="text" id="datepicker1" required="required">
+                    <input class="second" type="text" id="datepicker2" required="required"><br>
 
                     <label class="first" for="adult">Adult</label>
                     <label class="second" for="childreen">Childreen</label><br>
@@ -102,11 +103,12 @@
                     <label for="check2">Extra trips</label>
                     <input type="checkbox" value="None" id="check2" name="check"  /> <br>
                     <label for="check1">Food</label>
-                    <input class="check" type="checkbox" value="None" id="check3" name="check"  />
+                    <input class="check" type="checkbox" value="None" id="check3" name="check"  /><br>
+
 
                 </form>
+                <button class="calculate">Calculate</button>
 
-                <button disabled class="calculate">Calculate</button>
                 <div class="result"><p>Total: <span class="total"></span>&#8364;</p></div>
             </section>
 
@@ -116,7 +118,7 @@
                     <span><i class="ion-android-search"></i></span>
                     <select id="single">
                         <option value="piazza">Piazza dei Signori</option>
-                        <option value="arena">Verona Arena</option>
+                        <option selected value="arena">Verona Arena</option>
                         <option value="balcony">The balcony of Juliet's house</option>
                     </select>
                 </form>

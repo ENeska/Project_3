@@ -343,6 +343,22 @@ input[type=text] {
     color: #1875D1;
     transition: 0.5s;
 }
-.hidden_text, .inf {
+.hidden_text{
     display: none;
+}
+
+.arena, .balcony {
+    display: none;
+}
+
+
+
+/*Validate*/
+
+input.active {
+    border: 2px solid #1a7170;
+}
+
+input.error {
+    border: 2px solid red;
 }
