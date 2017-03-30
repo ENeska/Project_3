@@ -1,18 +1,19 @@
+/* **** Menu **** */
 
-/* Menu */
 $(function menu(){
     $('.js_menu').on('click', function(){
         $('nav').toggleClass('margin_left');
-        $('.dark_background').toggle();
+        $('#dark').fadeToggle('dark_background');
     });
 
     $('.js_close').on('click', function(){
         $('nav').removeClass('margin_left');
+        $('#dark').fadeOut('dark_background');
     });
 
 });
 
-/* Nav*/
+/* **** Nav **** */
 $(function nav(){
     $('nav li').on('click', function (){
 
@@ -37,7 +38,7 @@ $(function hideNav() {
     });
 });
 
-/* Read more */
+/* **** Read more **** */
 
 $(function readMore() {
 
@@ -61,7 +62,7 @@ $(function readMore() {
     })
 });
 
-/* Change color */
+/* **** Change color **** */
 
 $(function changeColor() {
 
@@ -74,7 +75,7 @@ $(function changeColor() {
 
 });
 
-/*Datepicker*/
+/* **** Datepicker **** */
 
 $( function() {
     $("#datepicker1, #datepicker2").datepicker({
@@ -85,7 +86,7 @@ $( function() {
 });
 
 
-/* Change selection*/
+/* **** Change selection **** */
 
 var $singleSelect =  $('#single');
 
@@ -120,11 +121,11 @@ $(function changeSection() {
     });
 });
 
-/*Travel Cost*/
+/* **** Travel Cost **** */
 
 $(function cost() {
 
-    $('.calculate').on('click', function () {
+    $('.calculate').on('click', function() {
 
 
         /* Day */
@@ -180,14 +181,13 @@ $(function cost() {
 
         var form = $('form');
 
-        form.on("submit", function(event) {
-            event.preventDefault();
+        form.on("submit", function(evt) {
+            evt.preventDefault();
         });
-
     });
 });
 
-/*Validate*/
+/* **** Validate **** */
 
 $(function check(){
     $('#myform').find('input').on('focus change', function (event){
@@ -214,14 +214,20 @@ $(function check(){
 });
 
 
+/* **** Image - mouseover, moseout **** */
 
+    var text = $('.image_text');
+    var layer = $('.layer_image');
 
+    $(layer).on('mouseover', function () {
+        $(this).fadeOut(600);
+        $(text).fadeOut(600);
+    });
 
-
-
-
-
-
+    $('.image_section img').on('mouseout', function () {
+        $(layer).fadeIn(600);
+        $(text).fadeIn(600);
+});
 
 
 

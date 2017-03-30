@@ -27,9 +27,9 @@ nav {
     width: 100%;
     height: 100%;
     position: fixed;
-    background: #081119;
+    background-color: black;
+    opacity: 0.6;
     z-index: 40;
-    opacity: 0.9;
     display: none;
 }
 .margin_left {
@@ -140,10 +140,13 @@ nav button {
 article {
     -moz-column-width: 40em;
     -webkit-column-width: 40em;
-    -moz-column-gap: 4em;
-    -webkit-column-gap: 2em;
-    margin: 2em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 1em;
+    margin: 1em;
+
 }
+
+
 
 section {
     display: inline-block;
@@ -368,28 +371,47 @@ input.error {
     border: 2px solid red;
 }
 
+/* Section Image */
 
-.describe p {
-    background: red;
-    width: 100px;
-    height: 100px;
-    z-index: 80;
-    opacity: 0.8;
-    margin: 0 auto;
-float: right;
-    overflow: hidden;
+.image_section {
+    position: relative;
+    margin: 0;
+    padding: 0;
     color: white;
+    transition: 1s;
 }
 
 .image_section img {
-    position: relative;
-    overflow: hidden;
-    margin: 0;
-    width: 100%;
-    padding: 0;
+     float: right;
+     width: 100%;
+     transition: 1s;
+     position: relative;
+ }
+
+.image_section p {
+    text-align: center;
+    padding-top: 12%;
 }
 
-section .image_section img {
-    margin: 0;
-    padding: 0;
+.image_text {
+    font-size: 3rem;
+    position: absolute;
+    border: 2px solid white;
+    width: 90%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
 }
+
+.layer_image {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+    position: absolute;
+
+}
+
+
+
+
