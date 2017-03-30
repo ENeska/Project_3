@@ -3,7 +3,6 @@
 $(function menu(){
     $('.js_menu').on('click', function(){
         $('nav').toggleClass('margin_left');
-        $('header').toggleClass('margin_left');
         $('.dark_background').toggle();
     });
 
@@ -135,6 +134,13 @@ $(function cost() {
         var totalChildreen = (totalDay * (childreenCost) +extraTrips) *childreen;
 
         cost.find('.total').text(totalAdult+totalChildreen);
+
+        var form = $('form');
+
+        form.on("submit", function(evt) {
+            evt.preventDefault();
+        });
+
     });
 });
 

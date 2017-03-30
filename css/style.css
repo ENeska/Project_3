@@ -26,7 +26,7 @@ nav {
 .dark_background {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: #081119;
     z-index: 40;
     opacity: 0.9;
@@ -39,11 +39,6 @@ nav {
 .margin_left nav {
     left:0;
 }
-
-.margin_left header {
-    margin-left:0;
-}
-
 
 h1 {
     margin: 0;
@@ -188,7 +183,7 @@ section ul li {
     margin-left: 20px;
 }
 
-section img {
+.box_first img, .cost img, .places img {
     width: 60%;
     float: right;
     margin: 0 0 1em 1em;
@@ -218,9 +213,7 @@ section button {
     transition: 0.4s;
 }
 
-.image_section img{
-    width: 100%;
-}
+
 
 section select {
     background-color: #2BBFBE;
@@ -373,4 +366,30 @@ input.active {
 
 input.error {
     border: 2px solid red;
+}
+
+
+.describe p {
+    background: red;
+    width: 100px;
+    height: 100px;
+    z-index: 80;
+    opacity: 0.8;
+    margin: 0 auto;
+float: right;
+    overflow: hidden;
+    color: white;
+}
+
+.image_section img {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+section .image_section img {
+    margin: 0;
+    padding: 0;
 }
