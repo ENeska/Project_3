@@ -74,8 +74,51 @@ $(function changeColor() {
 
 });
 
+/*Datepicker*/
+
+$( function() {
+    $("#datepicker1, #datepicker2").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: "0"
+    });
+
+});
 
 
+/* Change selection*/
+
+var $singleSelect =  $('#single');
+
+var hidden = $('.inf');
+
+var showPlace = {
+
+    piazza: function () {
+        hidden.hide();
+        $('.inf:first').show();
+    },
+    arena: function () {
+        hidden.hide();
+        $('.inf:odd').show();
+    },
+    balcony: function () {
+        hidden.hide();
+        $('.inf:last').show();
+    }
+};
+
+$(function changeSection() {
+
+    $('#single').on('change', function () {
+
+        var singleValues = $singleSelect.val();
+
+        if ($.isFunction(showPlace[singleValues])) {
+            showPlace[singleValues]();
+
+        }
+    });
+});
 
 /*Travel Cost*/
 
@@ -137,63 +180,12 @@ $(function cost() {
 
         var form = $('form');
 
-        form.on("submit", function(evt) {
-            evt.preventDefault();
+        form.on("submit", function(event) {
+            event.preventDefault();
         });
 
     });
 });
-
-
-
-
-
-/*Datepicker*/
-
-$( function() {
-    $("#datepicker1, #datepicker2").datepicker({
-        dateFormat: "yy-mm-dd",
-        minDate: "0"
-    });
-
-});
-
-
-/* Change selection*/
-
-var $singleSelect =  $('#single');
-
-var hidden = $('.inf');
-
-var showPlace = {
-
-    piazza: function () {
-        hidden.hide();
-        $('.inf:first').show();
-    },
-    arena: function () {
-        hidden.hide();
-        $('.inf:odd').show();
-    },
-    balcony: function () {
-        hidden.hide();
-        $('.inf:last').show();
-    }
-};
-
-$(function changeSection() {
-
-    $('#single').on('change', function () {
-
-        var singleValues = $singleSelect.val();
-
-        if ($.isFunction(showPlace[singleValues])) {
-            showPlace[singleValues]();
-
-        }
-    });
-});
-
 
 /*Validate*/
 
