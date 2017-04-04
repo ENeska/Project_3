@@ -1,6 +1,6 @@
 # Project_3
 
-Dashboard biura podróży. Stworzony podczas nauki JQuery. <br>
+Strona biura podróży. Stworzony podczas nauki JQuery. <br>
 
 Wykorzystuję następujące technologie:
 <ul>
